@@ -1,0 +1,11 @@
+CLI interface for the New York Times best sellers Nonfiction and Fiction books.
+- User tipes nyt_best_sellers_cli_app
+
+- Displays a list of the 5 best sellers in Nonfiction and the 5 best sellers in Fiction
+  - Asks if the user want`s the list of the 5 best sellers in Nonfiction or the list of the 5 best sellers in Fiction with only the books titles. (N / F)
+
+- Displays the chosen 5 best seller giving the title and author.
+  - Asks which book the user wants more information about, or to exit.
+
+- Displays the title, the author, the price and the synopsis of the chosen book.
+ - Asks if the user want to check an other list and restart the app, or to exit.
