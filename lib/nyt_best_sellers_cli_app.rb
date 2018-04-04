@@ -1,5 +1,2 @@
-require "nyt_best_sellers_cli_app/version"
-
-module NytBestSellersCliApp
-  # Your code goes here...
-end
+require_relative "nyt_best_sellers_cli_app/version"
+require_relative "./nyt_best_sellers_cli_app/cli"
