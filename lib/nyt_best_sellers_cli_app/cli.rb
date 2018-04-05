@@ -9,8 +9,9 @@ class NytBestSellersCliApp::CLI
     puts "If you want to check the top 5 New York Times Fiction best seller enter F"
     puts "If you want to check the top 5 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
-    input = gets.strip.downcase
+    input = []
     while input != "exit"
+      input = gets.strip.downcase
       case input
       when input = "f"
         fiction_list
@@ -24,8 +25,9 @@ class NytBestSellersCliApp::CLI
     puts " Fiction list with name and author 1, 2, 3,..."
     puts "If you want information about any book type it`s number!"
     puts "If you want to leave type exit"
-    input = gets.strip.downcase
+    input = []
     while input != "exit"
+      input = gets.strip.downcase
       case input
       when input = "1"
         puts "Book 1 info name, author, price and synopsis"
@@ -45,8 +47,9 @@ class NytBestSellersCliApp::CLI
     puts " Nonfiction list with name and author 1, 2, 3,..."
     puts "If you want information about any book type it`s number!"
     puts "If you want to leave type exit"
-    input = gets.strip.downcase
+    input = []
     while input != "exit"
+      input = gets.strip.downcase
       case input
       when input = "1"
         puts "Book 1 info name, author, price and synopsis"
@@ -63,7 +66,7 @@ class NytBestSellersCliApp::CLI
   end
 
   def goodbye
-
+    puts "See you soon and good reading!"
   end
 
 
