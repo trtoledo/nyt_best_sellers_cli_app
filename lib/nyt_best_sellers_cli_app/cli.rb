@@ -2,6 +2,7 @@ class NytBestSellersCliApp::CLI
 
   def call
     list_books
+    menu
     goodbye
   end
 
@@ -9,6 +10,9 @@ class NytBestSellersCliApp::CLI
     puts "If you want to check the top 5 New York Times Fiction best seller enter F"
     puts "If you want to check the top 5 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
+  end
+
+  def menu
     input = []
     while input != "exit"
       input = gets.strip.downcase
@@ -17,6 +21,8 @@ class NytBestSellersCliApp::CLI
         fiction_list
       when input = "n"
         nonfiction_list
+      else
+        puts "Sorry didn`t undestand type lists or exit."
       end
     end
   end
@@ -39,6 +45,10 @@ class NytBestSellersCliApp::CLI
         puts "Book 4 info name, author, price and synopsis"
       when input = "5"
         puts "Book 5 info name, author, price and synopsis"
+      when input = "lists"
+        list_books
+      else
+        puts "Sorry didn`t undestand type lists or exit."
       end
     end
   end
@@ -61,6 +71,8 @@ class NytBestSellersCliApp::CLI
         puts "Book 4 info name, author, price and synopsis"
       when input = "5"
         puts "Book 5 info name, author, price and synopsis"
+      else
+        puts "Sorry didn`t undestand type lists or exit."
       end
     end
   end
