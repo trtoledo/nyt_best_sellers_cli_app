@@ -13,7 +13,7 @@ class NytBestSellersCliApp::CLI
   end
 
   def menu
-    input = []
+    input = nill
     while input != "exit"
       input = gets.strip.downcase
       case input
@@ -31,7 +31,7 @@ class NytBestSellersCliApp::CLI
     puts " Fiction list with name and author 1, 2, 3,..."
     puts "If you want information about any book type it`s number!"
     puts "If you want choose the nonfiction list type lists and to leave type exit"
-    input = []
+    input = nill
     while input != "exit"
       input = gets.strip.downcase
       case input
@@ -57,7 +57,7 @@ class NytBestSellersCliApp::CLI
     puts " Nonfiction list with name and author 1, 2, 3,..."
     puts "If you want information about any book type it`s number!"
     puts "If you want to leave type exit"
-    input = []
+    input = nill
     while input != "exit"
       input = gets.strip.downcase
       case input
