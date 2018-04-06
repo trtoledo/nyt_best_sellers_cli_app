@@ -2,8 +2,6 @@ class NytBestSellersCliApp::CLI
 
   def call
     list_books
-    menu
-    goodbye
   end
 
   def list_books
@@ -48,6 +46,7 @@ class NytBestSellersCliApp::CLI
         puts "Sorry didn`t undestand type lists or exit."
       end
     end
+    goodbye
   end
 
   def nonfiction_list
@@ -75,6 +74,7 @@ class NytBestSellersCliApp::CLI
         puts "Sorry didn`t undestand type lists or exit."
       end
     end
+    goodbye
   end
 
   def goodbye
