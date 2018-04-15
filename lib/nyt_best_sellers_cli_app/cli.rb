@@ -1,7 +1,13 @@
 class NytBestSellersCliApp::CLI
 
   def call
+    greetings
     list_books
+    goodbye
+  end
+
+  def greetings
+    puts "Hi, with this app you can find out what are the to 5 Fiction and Nonfiction New York Times Best Sellers books!"
   end
 
   def list_books
@@ -12,9 +18,9 @@ class NytBestSellersCliApp::CLI
     puts "If you want to leave type exit"
       input = gets.strip.downcase
       case input
-      when input = "f"
+      when "f"
         fiction_list
-      when input = "n"
+      when "n"
         nonfiction_list
       else
         puts "Sorry didn`t undestand type lists or exit.."
@@ -30,25 +36,24 @@ class NytBestSellersCliApp::CLI
       puts "If you want choose an other list type lists and to leave type exit"
       input = gets.strip.downcase
       case input
-      when input = "1"
+      when "1"
         puts "Book 1 info name, author, price and synopsis"
-      when input = "2"
+      when "2"
         puts "Book 2 info name, author, price and synopsis"
-      when input = "3"
+      when "3"
         puts "Book 3 info name, author, price and synopsis"
-      when input = "4"
+      when "4"
         puts "Book 4 info name, author, price and synopsis"
-      when input = "5"
+      when "5"
         puts "Book 5 info name, author, price and synopsis"
-      when input = "lists"
+      when "lists"
         list_books
       else
         puts "Sorry didn`t undestand type lists or exit."
       end
     end
-    goodbye
   end
-
+#binding.pry
   def nonfiction_list
     input = nil
     while input != "exit"
@@ -58,23 +63,22 @@ class NytBestSellersCliApp::CLI
 
       input = gets.strip.downcase
       case input
-      when input = "1"
+      when "1"
         puts "Book 1 info name, author, price and synopsis"
-      when input = "2"
+      when "2"
         puts "Book 2 info name, author, price and synopsis"
-      when input = "3"
+      when "3"
         puts "Book 3 info name, author, price and synopsis"
-      when input = "4"
+      when "4"
         puts "Book 4 info name, author, price and synopsis"
-      when input = "5"
+      when "5"
         puts "Book 5 info name, author, price and synopsis"
-      when input = "lists"
+      when "lists"
         list_books
       else
         puts "Sorry didn`t undestand type lists or exit."
       end
     end
-    goodbye
   end
 
   def goodbye
