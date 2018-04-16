@@ -2,7 +2,7 @@ class NytBestSellersCliApp::CLI
 
   def call
     greetings
-    list_books
+    which_list
     goodbye
   end
 
@@ -10,7 +10,7 @@ class NytBestSellersCliApp::CLI
     puts "Hi, with this app you can find out what are the to 5 Fiction and Nonfiction New York Times Best Sellers books!"
   end
 
-  def list_books
+  def which_list
     @books = NytBestSellersCliApp::Book.today
     input = nil
     while input != "exit"
