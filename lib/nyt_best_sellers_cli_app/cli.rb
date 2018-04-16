@@ -11,6 +11,7 @@ class NytBestSellersCliApp::CLI
   end
 
   def list_books
+    @books = NytBestSellersCliApp::Book.today
     input = nil
     while input != "exit"
     puts "If you want to check the top 5 New York Times Fiction best seller enter F"
@@ -64,7 +65,7 @@ class NytBestSellersCliApp::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-      
+
       case input
       when "1"
         puts "Book 1 info name, author, price and synopsis"

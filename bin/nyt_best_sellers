@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-
-require "./lib/nyt_best_sellers_cli_app"
+require "bundler/setup"
+require "nyt_best_sellers_cli_app"
+#require "./lib/nyt_best_sellers_cli_app"
 
 NytBestSellersCliApp::CLI.new.call

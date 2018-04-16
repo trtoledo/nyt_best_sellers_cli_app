@@ -3,8 +3,6 @@ class NytBestSellersCliApp::Book
 
   def self.today
 
-  end
-
   book_1_f = self.new
   book_1_f.name = "Book 1 f"
   book_1_f.author = "Book 1 f Author"
@@ -12,5 +10,6 @@ class NytBestSellersCliApp::Book
   book_1_f.synopsis = "Book 1 f Synopsis"
 
   [Books...]
+  end
 
 end
