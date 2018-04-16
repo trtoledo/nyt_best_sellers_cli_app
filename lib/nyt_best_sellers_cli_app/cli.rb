@@ -17,10 +17,12 @@ class NytBestSellersCliApp::CLI
     puts "If you want to check the top 5 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
       input = gets.strip.downcase
-      case input
-      when "f"
+
+      if input.to_i > 0
+        puts @books[input.to_i - 1]
+      elsif input == "f"
         fiction_list
-      when "n"
+      elsif input == "n"
         nonfiction_list
       else
         puts "Sorry didn`t undestand type lists or exit.."
@@ -29,12 +31,13 @@ class NytBestSellersCliApp::CLI
   end
 
   def fiction_list
-    input = nil
-    while input != "exit"
       puts " Fiction list with name and author 1, 2, 3,..."
       puts "If you want information about any book type it`s number!"
       puts "If you want choose an other list type lists and to leave type exit"
+      input = nil
+      while input != "exit"
       input = gets.strip.downcase
+
       case input
       when "1"
         puts "Book 1 info name, author, price and synopsis"
@@ -55,13 +58,13 @@ class NytBestSellersCliApp::CLI
   end
 #binding.pry
   def nonfiction_list
-    input = nil
-    while input != "exit"
     puts " Nonfiction list with name and author 1, 2, 3,..."
     puts "If you want information about any book type it`s number!"
     puts "If you want choose an other list type lists and to leave type exit"
-
+    input = nil
+    while input != "exit"
       input = gets.strip.downcase
+      
       case input
       when "1"
         puts "Book 1 info name, author, price and synopsis"
