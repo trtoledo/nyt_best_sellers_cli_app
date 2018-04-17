@@ -14,4 +14,10 @@ class NytBestSellersCliApp::Book
   [Books...]
   end
 
+  def self.scrape_fiction_books
+
+  end
+
+  def self.scrape_nonfiction_books
+
 end
