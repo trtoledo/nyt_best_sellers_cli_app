@@ -51,7 +51,7 @@ class NytBestSellersCliApp::CLI
       when "5"
         puts "Book 5 info name, author, price and synopsis"
       when "lists"
-        list_books
+        which_list
       else
         puts "Sorry didn`t undestand type lists or exit."
       end

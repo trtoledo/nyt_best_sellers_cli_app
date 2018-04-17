@@ -3,6 +3,8 @@ class NytBestSellersCliApp::Book
 
   def self.today
 
+
+
   book_1_f = self.new
   book_1_f.name = "Book 1 f"
   book_1_f.author = "Book 1 f Author"
