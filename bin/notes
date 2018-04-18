@@ -7,5 +7,5 @@ CLI interface for the New York Times best sellers Nonfiction and Fiction books.
 - Displays the chosen 5 best seller giving the title and author.
   - Asks which book the user wants more information about, or to exit.
 
-- Displays the title, the author, the price and the synopsis of the chosen book.
+- Displays the title, the author, the publisher and the synopsis of the chosen book.
  - Asks if the user want to check an other list and restart the app, or to exit.

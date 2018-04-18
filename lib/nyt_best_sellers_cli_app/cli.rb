@@ -36,12 +36,13 @@ class NytBestSellersCliApp::CLI
         #puts "Sorry didn`t undestand type lists or exit.."
       end
     end
-  end
+  end#which_list
 
   def fiction_list
     @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
     @fiction_books.each.with_index(1) do |book, i|
     puts "#{i}. #{book.name} - #{book.author}"
+  end
     puts "If you want information about any book type it`s number!"
     puts "If you want choose an other list type lists and to leave type exit"
     input = nil
@@ -50,7 +51,7 @@ class NytBestSellersCliApp::CLI
 
         if input.to_i > 0
           the_book = @fiction_books[input.to_i - 1]
-          puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.price}"
+          puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
           puts "#{the_book.synopsis}"
         elsif input == "lists"
           which_list
@@ -64,6 +65,7 @@ class NytBestSellersCliApp::CLI
     @nonfiction_books = NytBestSellersCliApp::Book.scrape_nonfiction_books
     @nonfiction_books.each.with_index(1) do |book, i|
     puts "#{i}. #{book.name} - #{book.author}"
+  end
     puts "If you want information about any book type it`s number!"
     puts "If you want choose an other list type lists and to leave type exit"
     input = nil
@@ -71,8 +73,8 @@ class NytBestSellersCliApp::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_book = @fiction_books[input.to_i - 1]
-        puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.price}"
+        the_book = @nonfiction_books[input.to_i - 1]
+        puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisherq}"
         puts "#{the_book.synopsis}"
       elsif input == "lists"
         which_list
