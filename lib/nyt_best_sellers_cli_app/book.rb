@@ -1,7 +1,7 @@
 class NytBestSellersCliApp::Book
   attr_accessor :name, :author, :price, :synopsis
 
-  def self.today
+  def self.fiction
 
 
 
@@ -19,5 +19,7 @@ class NytBestSellersCliApp::Book
   end
 
   def self.scrape_nonfiction_books
+
+  end
 
 end
