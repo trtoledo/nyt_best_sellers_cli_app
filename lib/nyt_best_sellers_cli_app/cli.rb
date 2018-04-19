@@ -32,7 +32,8 @@ class NytBestSellersCliApp::CLI
 
   def fiction_list
     @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
-    @fiction_books.each.with_index(1) do |book, i|
+    binding.pry
+    @fiction_books.each_with_index(1) do |book, i|
     puts "#{i}. #{book.name} - #{book.author}"
   end
     puts "If you want information about any book type it`s number!"
