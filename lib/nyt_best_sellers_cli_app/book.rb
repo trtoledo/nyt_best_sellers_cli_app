@@ -1,18 +1,5 @@
 class NytBestSellersCliApp::Book
-  attr_accessor :name, :author, :price, :synopsis
-
-  #def self.fiction
-
-
-
-  #book_1_f = self.new
-  #book_1_f.name = "Book 1 f"
-  #book_1_f.author = "Book 1 f Author"
-  #book_1_f.price = "Book 1 f Price"
-  #book_1_f.synopsis = "Book 1 f Synopsis"
-
-  #[Books...]
-  #end
+  attr_accessor :name, :author, :publisher, :synopsis
 
   def self.scrape_fiction_books
     doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))
