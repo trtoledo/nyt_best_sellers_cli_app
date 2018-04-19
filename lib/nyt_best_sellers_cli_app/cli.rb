@@ -7,33 +7,25 @@ class NytBestSellersCliApp::CLI
   end
 
   def greetings
-    puts "Hi, with this app you can find out what are the to 5 Fiction and Nonfiction New York Times Best Sellers books!"
+    puts "Hi, this is the top 5 Fiction and Nonfiction New York Times Best Sellers books checker!"
   end
 
   def which_list
     input = nil
-    while input != "exit"
+
     puts "If you want to check the top 5 New York Times Fiction best seller enter F"
     puts "If you want to check the top 5 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
       input = gets.strip.downcase
 
-    if input == "f"
-      fiction_list
-    elsif input == "n"
-      nonfiction_list
-    else
-      puts "Sorry didn`t undestand type lists or exit.."
-      which_list
-
-      #if input.to_i > 0
-        #puts @books[input.to_i - 1]
-      #elsif input == "f"
-        #fiction_list
-      #elsif input == "n"
-        #nonfiction_list
-      #else
-        #puts "Sorry didn`t undestand type lists or exit.."
+    while input != "exit"
+      if input == "f"
+        fiction_list
+      elsif input == "n"
+        nonfiction_list
+      else
+        puts "Sorry I didn`t undestand."
+        which_list
       end
     end
   end#which_list
@@ -46,9 +38,9 @@ class NytBestSellersCliApp::CLI
     puts "If you want information about any book type it`s number!"
     puts "If you want choose an other list type lists and to leave type exit"
     input = nil
-      while input != "exit"
-      input = gets.strip.downcase
 
+      input = gets.strip.downcase
+      while input != "exit"
         if input.to_i > 0
           the_book = @fiction_books[input.to_i - 1]
           puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
