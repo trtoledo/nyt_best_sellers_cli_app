@@ -23,7 +23,7 @@ class NytBestSellersCliApp::Book
     author = doc.search("p.author").text
     publisher = doc.search("p.publisher").text
     synopsis = doc.search("p.description").text
-    type = "fiction"
+    type = "Fiction"
 
     Book.new(name, author, publisher, synopsis, type)
 
@@ -38,6 +38,9 @@ class NytBestSellersCliApp::Book
     author = doc.search("p.author").text
     publisher = doc.search("p.publisher").text
     synopsis = doc.search("p.description").text
+    type = "Nonfiction"
+
+    Book.new(name, author, publisher, synopsis, type)
 
   end
 
