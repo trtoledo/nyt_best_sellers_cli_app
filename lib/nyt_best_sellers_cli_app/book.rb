@@ -20,16 +20,17 @@ class NytBestSellersCliApp::Book
   def self.scrape_fiction_books
     doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))
     books = doc.search (".book-body")
-    books.each do |book|
-      name = books.search("h2.title").text
-      author = books.search("p.author").text
-      publisher = books.search("p.publisher").text
-      synopsis = books.search("p.description").text
-      type = "Fiction"
+    books.collect do |book|
+      book.name = books.search("h2.title").text
+      book.author = books.search("p.author").text
+      book.publisher = books.search("p.publisher").text
+      book.synopsis = books.search("p.description").text
+      book.type = "Fiction"
 
       self.new(name, author, publisher, synopsis, type)
+      #binding.pry
       end
-  binding.pry
+
   end
 
   def self.scrape_nonfiction_books
