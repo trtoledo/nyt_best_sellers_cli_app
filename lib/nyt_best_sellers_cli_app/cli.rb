@@ -64,11 +64,11 @@ class NytBestSellersCliApp::CLI
     input = nil
     while input != "exit"
       input = gets.strip.downcase
-
       if input.to_i > 0
         the_book = @nonfiction_books[input.to_i - 1]
-        puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisherq}"
+        puts "#{input.to_i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
         puts "#{the_book.synopsis}"
+        puts "If you want choose an other list type it`s number or type exit to leave."
       elsif input == "lists"
         which_list
       else
