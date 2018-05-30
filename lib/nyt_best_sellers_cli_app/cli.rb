@@ -7,14 +7,14 @@ class NytBestSellersCliApp::CLI
   end
 
   def greetings
-    puts "Hi, this is the top 5 Fiction and Nonfiction New York Times Best Sellers books checker!"
+    puts "Hi, this is the top 15 Fiction and Nonfiction New York Times Best Sellers books checker!"
   end
 
   def which_list
     input = nil
 
-    puts "If you want to check the top 5 New York Times Fiction best seller enter F"
-    puts "If you want to check the top 5 New York Times Nonfiction best seller enter N"
+    puts "If you want to check the top 15 New York Times Fiction best seller enter F"
+    puts "If you want to check the top 15 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
       input = gets.strip.downcase
 
@@ -27,17 +27,16 @@ class NytBestSellersCliApp::CLI
         puts "Sorry I didn`t undestand."
         which_list
       end
-    end
+    end#while
   end#which_list
 
   def fiction_list
     @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
     #binding.pry
-    @fiction_books.each.with_index(1) do |book, i|
-    puts "#{i}. #{book.name} - #{book.author}"
-  end
-    puts "If you want information about any book type it`s number!"
-    puts "If you want choose an other list type lists and to leave type exit"
+    @fiction_books.each.with_index(1) { |book, i|
+      puts "#{i}. #{book.name} - #{book.author}"}
+      puts "If you want information about any book type it`s number!"
+      puts "If you want choose an other list type lists and to leave type exit"
     input = nil
 
       input = gets.strip.downcase
@@ -56,11 +55,10 @@ class NytBestSellersCliApp::CLI
 #binding.pry
   def nonfiction_list
     @nonfiction_books = NytBestSellersCliApp::Book.scrape_nonfiction_books
-    @nonfiction_books.each.with_index(1) do |book, i|
-    puts "#{i}. #{book.name} - #{book.author}"
-  end
-    puts "If you want information about any book type it`s number!"
-    puts "If you want choose an other list type lists and to leave type exit"
+    @nonfiction_books.each.with_index(1) { |book, i|
+      puts "#{i}. #{book.name} - #{book.author}"}
+      puts "If you want information about any book type it`s number!"
+      puts "If you want choose an other list type lists and to leave type exit"
     input = nil
     while input != "exit"
       input = gets.strip.downcase
