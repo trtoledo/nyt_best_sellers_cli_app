@@ -11,18 +11,21 @@ class NytBestSellersCliApp::CLI
   end
 
   def which_list
-    input = nil
+    @input = nil
 
     puts "If you want to check the top 15 New York Times Fiction best seller enter F"
     puts "If you want to check the top 15 New York Times Nonfiction best seller enter N"
     puts "If you want to leave type exit"
-      input = gets.strip.downcase
 
-    while input != "exit"
-      if input == "f"
+    while @input != "exit"
+      @input = gets.strip.downcase
+      if @input == "f"
         fiction_list
-      elsif input == "n"
+
+      elsif @input == "n"
         nonfiction_list
+      elsif @input == "exit"
+        break
       else
         puts "Sorry I didn`t undestand."
         which_list
@@ -37,16 +40,16 @@ class NytBestSellersCliApp::CLI
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want information about any book type it`s number!"
       puts "If you want choose an other list type lists and to leave type exit"
-    input = nil
 
-      input = gets.strip.downcase
-      while input != "exit"
-        if input.to_i > 0
-          the_book = @fiction_books[input.to_i - 1]
-          puts "#{i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
+      while @input != "exit"
+        @input = gets.strip.downcase
+        if @input.to_i > 0
+          the_book = @fiction_books[@input.to_i - 1]
+          puts "#{@input}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
           puts "#{the_book.synopsis}"
-        elsif input == "lists"
-          which_list
+          puts "If you want choose an other book type it`s number, if you want an other list type 'lists' or type type 'exit' to leave"
+        elsif @input == "lists" || @input == "exit"
+          break
         else
           puts "Sorry didn`t undestand type lists or exit."
         end
@@ -59,16 +62,16 @@ class NytBestSellersCliApp::CLI
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want information about any book type it`s number!"
       puts "If you want choose an other list type lists and to leave type exit"
-    input = nil
-    while input != "exit"
-      input = gets.strip.downcase
-      if input.to_i > 0
-        the_book = @nonfiction_books[input.to_i - 1]
-        puts "#{input.to_i}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
+
+    while @input != "exit"
+      @input = gets.strip.downcase
+      if @input.to_i > 0
+        the_book = @nonfiction_books[@input.to_i - 1]
+        puts "#{@input}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
         puts "#{the_book.synopsis}"
         puts "If you want choose an other list type it`s number or type exit to leave."
-      elsif input == "lists"
-        which_list
+      elsif @input == "lists" || @input == "exit"
+        break
       else
         puts "Sorry didn`t undestand type lists or exit."
       end

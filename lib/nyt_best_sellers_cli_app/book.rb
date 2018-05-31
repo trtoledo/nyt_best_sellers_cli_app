@@ -22,13 +22,13 @@ class NytBestSellersCliApp::Book
     #binding.pry
     books = doc.css (".book-body")
     #binding.pry
-    books.each do |book|
+    books.collect do |book|
       #binding.pry
 
-      name = books.search("h2.title").text
-      author = books.search("p.author").text
-      publisher = books.search("p.publisher").text
-      synopsis = books.search("p.description").text
+      name = book.search("h2.title").text
+      author = book.search("p.author").text
+      publisher = book.search("p.publisher").text
+      synopsis = book.search("p.description").text
       type = "Fiction"
 
       self.new(name, author, publisher, synopsis, type)
