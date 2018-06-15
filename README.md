@@ -1,8 +1,8 @@
 # NytBestSellersCliApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nyt_best_sellers_cli_app`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the NY Times Best Sellers Cli-App CLI Gem!
+This CLI displays two different lists with the 15 best sellers of fiction and nonfiction books.
+After the user choses one of the lists, they can chose a specific book and be given it`s list position, title, author, publisher and synopsis.
 
 ## Installation
 
@@ -21,8 +21,24 @@ Or install it yourself as:
     $ gem install nyt_best_sellers_cli_app
 
 ## Usage
+After installing bundle:
 
-TODO: Write usage instructions here
+Start by calling the executable ‘nyt_best_sellers’ into the ‘bin’ file.
+./bin/nyt_best_sellers
+It will display a greeting and the following options:
+‘Hi, this is the top 15 Fiction and Nonfiction New York Times Best Sellers books checker!’
+‘If you want to check the top 15 New York Times Fiction best sellers enter F’
+‘If you want to check the top 15 New York Times Nonfiction best sellers enter N’
+‘If you want to leave type EXIT’
+After the user chooses,  it will display a list with the position, title and author of the New York Times 15 best sellers books  from the chosen category.  At the bottom it will display the options;
+‘If you want more information about any book in this list type it`s number!’
+‘If you want to choose another list type 'lists' and to leave type 'exit'.’
+At this point when the user chooses the book he wants more information about by typing it`s number, it will display a more detailed list of information with the publisher and a synopsis of it including the position on the list, title and author.
+At all times the user can type ‘EXIT’ to leave the app or by typing ‘LISTS’ to return to the first question.
+In case the user`s input doesn`t correspond to an expected answer it will display;
+‘Sorry didn`t understand.’
+‘If you want more information about any book in this list type it`s number!’
+‘If you want to choose an other list type 'LISTS' and to leave type 'EXIT.’
 
 ## Development
 
