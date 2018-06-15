@@ -53,7 +53,7 @@ class NytBestSellersCliApp::CLI
         elsif @input == "exit"
           break
         else
-          puts "Sorry didn`t understand."
+          puts "Sorry I didn`t understand."
           puts "If you want more information about any book in this list type it`s number!"
           puts "If you want to choose an other list type 'lists' and to leave type 'exit'"
         end
