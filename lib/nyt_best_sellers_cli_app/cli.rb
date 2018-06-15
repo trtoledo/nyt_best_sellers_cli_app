@@ -27,7 +27,7 @@ class NytBestSellersCliApp::CLI
       elsif @input == "exit"
         break
       else
-        puts "Sorry I didn`t undestand."
+        puts "Sorry I didn`t understand."
         which_list
       end
     end#while
@@ -53,7 +53,7 @@ class NytBestSellersCliApp::CLI
         elsif @input == "exit"
           break
         else
-          puts "Sorry didn`t undestand."
+          puts "Sorry didn`t understand."
           puts "If you want more information about any book in this list type it`s number!"
           puts "If you want to choose an other list type 'lists' and to leave type 'exit'"
         end
@@ -79,7 +79,7 @@ class NytBestSellersCliApp::CLI
         elsif @input == "exit"
           break
         else
-          puts "Sorry didn`t undestand."
+          puts "Sorry didn`t understand."
           puts "If you want more information about any book in this list type it`s number!"
           puts "If you want to choose an other list type 'lists' and to leave type 'exit'"
         end
