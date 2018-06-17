@@ -59,7 +59,7 @@ class NytBestSellersCliApp::CLI
         end
       end
     end
-#binding.pry
+
   def nonfiction_list
     @nonfiction_books = NytBestSellersCliApp::Book.scrape_nonfiction_books
     @nonfiction_books.each.with_index(1) { |book, i|
@@ -89,7 +89,5 @@ class NytBestSellersCliApp::CLI
   def goodbye
     puts "See you soon and good reading!"
   end
-
-#binding.pry
 
 end#class

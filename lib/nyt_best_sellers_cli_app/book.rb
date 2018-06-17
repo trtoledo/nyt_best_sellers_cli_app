@@ -20,7 +20,6 @@ class NytBestSellersCliApp::Book
   def self.scrape_fiction_books
     doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))
     books = doc.css (".book-body")
-    #binding.pry
     books.collect { |book|
       name = book.search("h2.title").text
       author = book.search("p.author").text
@@ -32,8 +31,7 @@ class NytBestSellersCliApp::Book
 
   def self.scrape_nonfiction_books
     doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-nonfiction/"))
-    books = doc.css (".book-body") #returns a NodeList, so .each can't be called
-    #binding.pry
+    books = doc.css (".book-body")
     books.collect { |book|
       name = book.search("h2.title").text
       author = book.search("p.author").text
