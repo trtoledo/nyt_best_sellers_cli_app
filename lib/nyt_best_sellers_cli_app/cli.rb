@@ -35,7 +35,7 @@ class NytBestSellersCliApp::CLI
   def fiction_list
     @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
     #binding.pry
-    puts "There are #{NytBestSellersCliApp::Book.all.count} fiction books"
+    #puts "There are #{NytBestSellersCliApp::Book.all.count} fiction books"
     @fiction_books.each.with_index(1) { |book, i|
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want more information about any book in this list type it`s number!"
@@ -43,7 +43,7 @@ class NytBestSellersCliApp::CLI
 
       while @input != "exit"
         @input = gets.strip.downcase
-        if @input.to_i > 0
+        if @input.to_i.between?(1, 15)
           the_book = @fiction_books[@input.to_i - 1]
           puts "#{@input}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
           puts "#{the_book.synopsis}"
@@ -69,8 +69,8 @@ class NytBestSellersCliApp::CLI
 
       while @input != "exit"
         @input = gets.strip.downcase
-        #if @input.to_i.between?(0, 16)
-        if @input.to_i > 0
+        if @input.to_i.between?(1, 15)
+        #if @input.to_i > 0
           the_book = @nonfiction_books[@input.to_i - 1]
           puts "#{@input}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
           puts "#{the_book.synopsis}"
