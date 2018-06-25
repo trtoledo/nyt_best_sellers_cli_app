@@ -23,7 +23,7 @@ class NytBestSellersCliApp::Book
 
   def self.scrape_fiction_books
     # doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))
-    doc = scrape_fiction
+    doc = NytBestSellersCliApp::Scraper.scrape_fiction
     books = doc.css (".book-body")
     books.collect { |book|
       name = book.search("h2.title").text
@@ -34,13 +34,10 @@ class NytBestSellersCliApp::Book
       self.new(name, author, publisher, synopsis, type)}
   end
 
-  def self.scrape_fiction
-    puts "SCRAPING FICTION *********"
-    Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))
-  end
+  
 
   def self.scrape_nonfiction_books
-    doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-nonfiction/"))
+    doc = NytBestSellersCliApp::Scraper.scrape_nonfiction
     books = doc.css (".book-body")
     books.collect { |book|
       name = book.search("h2.title").text
@@ -50,5 +47,7 @@ class NytBestSellersCliApp::Book
       type = "Nonfiction"
       self.new(name, author, publisher, synopsis, type)}
   end
+
+
 
 end

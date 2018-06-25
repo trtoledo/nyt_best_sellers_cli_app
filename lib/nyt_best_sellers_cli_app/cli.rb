@@ -21,7 +21,6 @@ class NytBestSellersCliApp::CLI
       @input = gets.strip.downcase
       if @input == "f"
         fiction_list
-
       elsif @input == "n"
         nonfiction_list
       elsif @input == "exit"
@@ -70,6 +69,7 @@ class NytBestSellersCliApp::CLI
 
       while @input != "exit"
         @input = gets.strip.downcase
+        #if @input.to_i.between?(0, 16)
         if @input.to_i > 0
           the_book = @nonfiction_books[@input.to_i - 1]
           puts "#{@input}. #{the_book.name} - #{the_book.author}  -  #{the_book.publisher}"
