@@ -5,7 +5,10 @@ class NytBestSellersCliApp::Book
   #3. Prevent scraping the same site more than once
   #4. Fix the error on number that's too big OK
 
-   @@all = []
+   #@@all = []
+   @@all_fiction_books = []
+   @@all_nonfiction_books = []
+
 
   def initialize(name, author, publisher, synopsis, type)
     @name = name
@@ -13,30 +16,38 @@ class NytBestSellersCliApp::Book
     @publisher = publisher
     @synopsis = synopsis
     @type = type
-    @@all << self
-    #@@all_nonfiction << self
+    if type == "Fiction"
+    @@all_fiction_books << self
+    elsif type == "Nonfiction"
+    @@all_nonfiction << self
+    end
   end
 
-  def self.all
-   @@all
+  def self.all_fiction_books
+   @@all_fiction_books
+  end
+  def self.all_nonfiction_books
+   @@all_nonfiction_books
   end
 
-  def self.all_nonfiction
-
-
-
-  end
-
+  #def self.all
+   #@@all
+  #end
 
   def self.fiction_books
-    if self.count
-
-
+    if @@all_fiction_books.count == 0
+      self.scrape_fiction_books
+    else
+      @@all_fiction_books
+    end
   end
 
   def self.nonfiction_books
-
-
+    if @@all_nonfiction_books.count == 0
+      self.scrape_nonfiction_books
+    else
+      @@all_nonfiction_books
+    end
   end
 
 

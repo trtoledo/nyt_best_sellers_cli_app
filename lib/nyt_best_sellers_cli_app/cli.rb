@@ -33,9 +33,9 @@ class NytBestSellersCliApp::CLI
   end#which_list
 
   def fiction_list
-    @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
+    @fiction_books = NytBestSellersCliApp::Book.fiction_books
     #binding.pry
-    puts "There are #{NytBestSellersCliApp::Book.all.count} fiction books"
+    puts "There are #{NytBestSellersCliApp::Book.all_fiction_books.count} fiction books"
     @fiction_books.each.with_index(1) { |book, i|
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want more information about any book in this list type it`s number!"
@@ -61,7 +61,7 @@ class NytBestSellersCliApp::CLI
     end
 
   def nonfiction_list
-    @nonfiction_books = NytBestSellersCliApp::Book.scrape_nonfiction_books
+    @nonfiction_books = NytBestSellersCliApp::Book.nonfiction_books
     @nonfiction_books.each.with_index(1) { |book, i|
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want more information about any book in this list type it`s number!"
