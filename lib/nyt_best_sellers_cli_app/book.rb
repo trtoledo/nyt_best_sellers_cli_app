@@ -5,7 +5,7 @@ class NytBestSellersCliApp::Book
   #3. Prevent scraping the same site more than once
   #4. Fix the error on number that's too big OK
 
-   #@@all = []
+   @@all = []
 
   def initialize(name, author, publisher, synopsis, type)
     @name = name
@@ -13,13 +13,33 @@ class NytBestSellersCliApp::Book
     @publisher = publisher
     @synopsis = synopsis
     @type = type
-    #@@all << self
+    @@all << self
+    #@@all_nonfiction << self
+  end
+
+  def self.all
+   @@all
+  end
+
+  def self.all_nonfiction
+
+
 
   end
 
-  #def self.all
-   #@@all
-  #end
+
+  def self.fiction_books
+    if self.count
+
+
+  end
+
+  def self.nonfiction_books
+
+
+  end
+
+
 
   def self.scrape_fiction_books
     # doc = Nokogiri::HTML(open("https://www.nytimes.com/books/best-sellers/combined-print-and-e-book-fiction/"))

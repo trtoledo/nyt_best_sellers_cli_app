@@ -35,7 +35,7 @@ class NytBestSellersCliApp::CLI
   def fiction_list
     @fiction_books = NytBestSellersCliApp::Book.scrape_fiction_books
     #binding.pry
-    #puts "There are #{NytBestSellersCliApp::Book.all.count} fiction books"
+    puts "There are #{NytBestSellersCliApp::Book.all.count} fiction books"
     @fiction_books.each.with_index(1) { |book, i|
       puts "#{i}. #{book.name} - #{book.author}"}
       puts "If you want more information about any book in this list type it`s number!"
